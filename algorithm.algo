@@ -1,0 +1,19 @@
+ALGORITHM checkpoint
+VAR
+    c: CHAR;
+    V,W,L: INTEGER;
+BEGIN
+   read(c);
+   WHILE (c <> '.') DO
+       l:=l+1;
+       IF (c='') THEN
+           W:=W+1;
+          ELSE IF (c:=[a,e,i,o,u,A,E,I,U,O]) THEN
+               V:=V+1;
+           
+           END_IF
+       END_IF
+       read(c);
+   END_WHILE
+   write(V, W, L);
+END
