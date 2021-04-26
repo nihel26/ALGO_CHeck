@@ -1,0 +1,49 @@
+ALGORITHM Solution_one
+VAR
+   set1, set2 : ARRAY_OF INTEGER[100];
+   sum : INTEGER :=0;
+   i : INTEGER;
+
+BEGIN
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        FOR i FROM 0 TO set2.length-1  DO
+            IF (set1[i] = set2[i]) THEN
+                sum := set1[i]+ set2[i];
+            END_IF
+        END_FOR
+    END_FOR    
+END
+
+
+
+ALGORITHM solution_two
+VAR
+set1 : ARRAY_OF INTEGER [100];
+set2 : ARRAY_OF type[100];
+   htab : HASH_TABLE<INTEGER,INTEGER>;
+sum,count,elt,i: INTEGER;
+
+BEGIN
+    write ("enter set1");
+    read ("set1");
+    write ("enter set2");
+    read ("set2");
+FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        elt := set1[i];
+        htab.insert(count,elt);
+        count= count+1;
+END_FOR
+
+FOR i FROM 0 TO set2.length-1 STEP 1  DO
+        elt := set2[i];
+        htab.insert(count,elt);
+        count= count+1;
+END_FOR
+
+FOR elt FROM 1 TO count-1 DO
+    sum= sum + htab.get[elt];
+END_FOR
+
+    write ("sum");
+
+END
