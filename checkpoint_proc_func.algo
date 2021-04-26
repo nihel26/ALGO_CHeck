@@ -1,0 +1,11 @@
+PROCEDURE dot_Product(V1,V2 : ARRAY_OF INTEGER [5]; i,ps: INTEGER)
+
+BEGIN    
+    ps :=0;
+    FOR i FROM 0 TO V1.length-1 STEP 1  DO
+        FOR i FROM 0 TO V2.length-1  DO
+           ps := V1[i] * V2[i]; 
+        END_FOR
+    END_FOR
+END
+
